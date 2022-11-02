@@ -1,14 +1,19 @@
 #!/usr/bin/python3
-"""Define unittests for base_model.py"""
+""" """
+from tests.test_models.test_base_model import test_basemodel
+from models.state import State
 
 
-import unittest
+class test_state(test_basemodel):
+    """ """
 
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "State"
+        self.value = State
 
-class Test_State(unittest.TestCase):
-    """Unit test for BaseModel class"""
-    pass
-
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_name3(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.name), str)
